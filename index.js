@@ -1,7 +1,7 @@
 const express = require("express");
 const prettyConsole = require("./pretty-console");
 const app = express();
-const appPort = 5000;
+const appPort = process.env.PORT || 5000;
 
 app.get("/", (req, res) =>
   res.send({
