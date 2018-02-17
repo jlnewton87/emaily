@@ -1,20 +1,20 @@
-const app = require('express')();
+const router = require('express').Router();
 const passport = require('../services/passport');
 
-app.get('/google', passport.authenticate('google', {
+router.get('/google', passport.authenticate('google', {
   scope: [ 'profile', 'email' ]
 }));
 
-app.get('/google/callback', passport.authenticate('google'));
+router.get('/google/callback', passport.authenticate('google'));
 
-app.get('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   req.logout();
   res.send({ success: true });
 });
 
 
-app.get('/current_user', (req, res) => {
+router.get('/current_user', (req, res) => {
   res.send(req.user);
 });
 
-module.exports = app;
+module.exports = router;
