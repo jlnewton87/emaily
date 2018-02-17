@@ -1,5 +1,4 @@
 const express = require("express");
-const prettyConsole = require("./pretty-console");
 const app = express();
 const appPort = process.env.PORT || 5000;
 
@@ -10,4 +9,3 @@ app.get("/", (req, res) =>
 );
 
 app.listen(appPort);
-prettyConsole(appPort);
