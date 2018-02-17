@@ -4,7 +4,7 @@ const appPort = process.env.PORT || 5000;
 
 app.get("/", (req, res) =>
   res.send({
-    hi: "there"
+    name: "josh"
   })
 );
 
