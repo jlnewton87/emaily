@@ -1,11 +1,13 @@
+require('./models/user');
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-const routes = require('./routes');
+const authRoutes = require('./routes/auth');
 const keys = require('./config/keys');
 const db = require('./config/db');
-require('./models/user');
+
+debugger;
 
 mongoose.connect(db.getConnectionString());
 
@@ -17,8 +19,7 @@ app.use(cookieSession({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
-routes(app).auth;
+app.use('/auth', authRoutes);
 
 const appPort = process.env.PORT || 5000;
 app.listen(appPort);
