@@ -4,12 +4,9 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const authRoutes = require('./routes/auth');
-const keys = require('./config/keys');
-const db = require('./config/db');
+const keys = require('./config/keys')();
 
-debugger;
-
-mongoose.connect(db.getConnectionString());
+mongoose.connect(keys.getConnectionString());
 
 const app = express();
 

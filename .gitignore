@@ -2,3 +2,5 @@ node_modules/
 npm-debug*
 keys.js
 db.js
+config/dev.js
+config/prod.js
