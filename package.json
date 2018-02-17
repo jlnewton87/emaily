@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Josh Newton",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "bluebird": "^3.5.1",
+    "chalk": "^2.3.1",
+    "express": "^4.16.2",
+    "figlet": "^1.2.0"
   }
 }
