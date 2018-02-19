@@ -5,7 +5,7 @@ module.exports = () => {
 }
 
 const sendProdKeys = () => {
-  return require('prod');
+  return require('./prod');
 };
 const sendDevKeys = () => {
   return require('./dev');
